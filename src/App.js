@@ -1,12 +1,19 @@
 import React from 'react';
-import CicloDeVida from './components/CicloDeVida'
+import 'bulma/css/bulma.min.css';
+import 'font-awesome/css/font-awesome.min.css';
+import './index.css';
+import CalculadorApp from './components/imc/captura/CalculadorApp'
 
-function App() {
-  return (
-    <div className="App">
-        <CicloDeVida/>
-    </div>
-  );
+export default class App extends React.Component {
+  componentWillMount(){
+    this.setState({imc:0})
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <CalculadorApp App={this}/>
+      </div>
+    );
+  }
 }
-
-export default App;
